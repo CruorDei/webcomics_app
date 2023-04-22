@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Details Products
+{% endblock %}
+
+{% block body %}
+
+
+		<section class="">
+			<div class="">
+				<h1>{{underProduct.parentProduct.slug ~ ' - ' ~ underProduct.num}}</h1>
+			</div>
+			<div>
+				image : 
+				{% for image in underProduct.images %}
+				<pre>
+			</pre>
+					<img src="{{asset('assets/uploads/' ~ product.slug ~ '/') ~ image.name}}" alt="image de {{ image.name }}">
+				{% endfor %}
+			</div>
+		</section>
+
+{% endblock %}

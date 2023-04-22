@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.theme-dark {
+  all: initial !important; /*brave m'embete*/
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: grey;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+nav {
+  position: sticky;
+  /* background: linear-gradient(to bottom, grey, rgba(211, 211, 211, 0)); */
+  top: 0;
+  padding: 10px;
+  background-image: linear-gradient(
+      to bottom,
+      grey,
+      rgba(255, 255, 255, 0) 20px
+    ),
+    linear-gradient(to bottom, grey, grey 20px, transparent 20px, transparent);
+}
+
+.nav-pos {
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+}
+
+nav h4{
+  color: #111;
+  text-decoration: none;
+  padding: 14px 16px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 14px 16px;
+}
+
+nav a:hover {
+  background-color: #111;
+}
+
+#toggle-element{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #444;
+  align-items: center;
+  height: 45px;
+}
+
+.toggle-element-child{
+  flex: 1;
+}
+
+.cara-icons{
+  height: 20px;
+  width: 20px;
+  color: white;
+}
+
+a {
+  color: brown;
+  text-decoration: none;
+}
+
+/*main*/
+
+main {
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 1200px) {
+  /* Mettez vos styles ici */
+  body {
+    font-size: 16px;
+  }
+  section {
+    width: 1140px;
+  }
+}
+
+@media (min-width: 780px) and (max-width: 1200px) {
+  /* Mettez vos styles ici */
+  body {
+    font-size: 14px;
+  }
+  section {
+    width: 720px;
+  }
+}
+
+@media (max-width: 780px) {
+  /* Mettez vos styles ici */
+  body {
+    font-size: 12px;
+  }
+  section {
+    min-width: 360;
+    width: auto;
+  }
+}

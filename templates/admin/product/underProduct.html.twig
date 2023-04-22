@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administration UnderProduct dans {{product.name}}{% endblock %}
+
+{% block body %}
+
+    {{form_start(underProductForm)}}
+    {{form_row(underProductForm)}}
+    <button type="submit">{{btn_label|default('Ajouter')}}</button>
+    {{form_end(underProductForm)}}
+   
+
+{% endblock %}

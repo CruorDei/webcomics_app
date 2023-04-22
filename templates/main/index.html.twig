@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+	{{parent()}}
+	{#sans parent, le contenue est écrasé#}
+{% endblock %}
+
+{% block title %}Accueil
+{% endblock %}
+
+{% block body %}
+
+	<section>
+
+		{% for category in categories %}
+
+			{% if category.parent == null %}
+
+				<div class="toggle-element-child">
+					<h4>{{category.name}}</h4>
+				</div>
+
+			{% else %}
+
+				<div class="toggle-element-child">
+					<a href="{{ path('categorie_list', {slug: category.slug}) }}">{{category.name}}</a>
+				</div>
+
+			{% endif %}
+		{% endfor %}
+
+		<div class="">
+			<h1>Derniere sorties</h1>
+		</div>
+
+		<div class=""></div>
+	</section>
+
+
+{% endblock %}

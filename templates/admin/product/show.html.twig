@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administration product{% endblock %}
+
+{% block body %}
+
+<section class="example-wrapper">
+    <h1>{{product.name}} admin</h1>
+   <a href="{{path('app_admin_product_addUnderProduct', {id: product.id})}}">ajouter un chap sup.</a>
+    {% for underProduct in product.underProducts %}
+        <div>
+            <p>{{underProduct.num}}</p><a href="{{path('app_admin_product_deleteUnderProduct', {id: underProduct.id, product_id: product.id})}}">D</a>
+        </div>
+    {% endfor %}
+</section>
+{% endblock %}

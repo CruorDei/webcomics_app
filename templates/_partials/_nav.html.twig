@@ -1,0 +1,31 @@
+{% block nav %}
+	<nav class="">
+		<div class="nav-pos">
+			<div>
+				<a href="{{path("app_main")}}">Logo</a>
+				<a id="toggle-button">Genre</span></a>
+																														
+			</div>
+			<ul>
+				{% if app.user %}
+					<li><img src=""/><a href="{{path('profile_index')}}">{{ app.user.pseudo }}</a>
+					</li>
+					<li>
+						<a href="{{path('app_logout')}}">logout</a>
+					</li>
+				{% else %}
+					<li>
+						<a href="/signin">sign in</a>
+					</li>
+					<li>
+						<a href="{{path('app_login')}}">login</a>
+					</li>
+				{% endif %}
+			</ul>
+		</div>
+		<div id="toggle-element" style="display: none;">
+
+			
+		</div>
+	</nav>
+{% endblock %}

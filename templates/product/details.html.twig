@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Details Products
+{% endblock %}
+
+{% block body %}
+
+
+		<section class="">
+			<div class="">
+				<h1>{{product.name}}</h1>
+			</div>
+			<div class="">
+				<p>Description :
+					{{product.Description}}</p>
+				<p>Catégorie :
+					{{ product.categories.name }}</p>
+			</div>
+			<div class="">
+				{% for image in product.images %}
+					{% if image.name %}
+                    <img src="{{asset('assets/uploads/products/') ~ image.name}}" alt="image de {{ image.name }}">
+                    {% endif %}
+                    
+
+				{% endfor %}
+			</div>
+            <div class="">
+                {% for underProduct in product.underProducts %}
+                    <a href="{{ path('under_product_details', {slug_parent: product.slug , id: underProduct.id, slug: underProduct.slug}) }}"><p>{{ underProduct.num }}</p></a>
+                {% endfor %}
+            </div>
+		</section>
+
+{% endblock %}

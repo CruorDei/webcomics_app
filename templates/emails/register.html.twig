@@ -1,0 +1,7 @@
+<h1>Activer votre compte</h1>
+<p>hello {{user.pseudo}},</p>
+<p>
+    validez votre compte avec le lien si dessou:
+</p>
+<a href="{{ absolute_url(path('verify_user', {token: token})) }}">Link</a>
+<p>expiration du lien sous 3h</p>

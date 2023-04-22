@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administration product edit
+{% endblock %}
+
+{% block body %}
+
+	<section>
+		<h1>Administration product edit</h1>
+
+
+		{% include "admin/product/_form.html.twig" with {'btn_label': 'modifier'} %}
+	</section>
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{ asset('assets/js/image.js')}}" defer></script>
+{% endblock %}

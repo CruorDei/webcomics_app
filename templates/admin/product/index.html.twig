@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administration product{% endblock %}
+
+{% block body %}
+
+<section class="example-wrapper">
+    <h1>Administration product</h1>
+        <a href="{{path('app_admin_product_add')}}">add</a>
+    {% for product in products %}
+        <div class="card-admin">
+            {% for image in product.images %}
+					{% if image.name %}
+                        <img src="{{asset('assets/uploads/products/') ~ image.name}}" alt="image de {{ image.name }}" width='50'>
+                    {% endif %}
+				{% endfor %}
+            <a href="{{path('app_admin_product_show', {id: product.id})}}">{{product.name}}</a>
+            <a href="{{path('app_admin_product_edit', {id: product.id})}}">E</a>
+            <a href="{{path('app_admin_product_delete', {id: product.id})}}">D</a>
+            <a href="{{path('app_admin_product_addUnderProduct', {id: product.id})}}">AddChild</a>
+        </div>
+    {% endfor %}
+   
+</section>
+{% endblock %}

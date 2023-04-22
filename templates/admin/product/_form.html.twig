@@ -1,0 +1,14 @@
+{{form_start(productForm)}}
+    {{form_row(productForm)}}
+
+    {% if app.request.attributes.get('_route') == 'app_admin_product_edit' %}
+        <h4>Images</h4>
+        {% for image in product.images %}
+            <div>
+                <img src="{{ asset('assets/uploads/products/') ~ image.name }}" alt="image" width='100'>
+                <a href="{{ path('app_admin_product_delete_image', {id: image.id}) }}" data-delete data-token="{{ csrf_token('delete' ~ image.id) }}">X</a>
+            </div>
+        {% endfor %}
+    {% endif %}    
+    <button type="submit">{{btn_label|default('Ajouter')}}</button>
+{{form_end(productForm)}}
