@@ -23,13 +23,13 @@ p {
   color: #eee;
 }
 
-button, input.submit{
+button, input.submit, button.btn{
   padding: 5px;
   padding-left: 15px;
   padding-right: 15px;
   border-radius: 10px;
   background-color: #111;
-  color: #eee;
+  color: #eee !important;
   border: solid 2px #111;
   box-sizing: border-box;
 }
@@ -40,7 +40,7 @@ button:hover, input:hover{
   border: solid 2px #333;
 }
 
-button:hover{
+button:hover, button.btn:hover{
   background-color: #111;
   border: solid 2px #999;
 }

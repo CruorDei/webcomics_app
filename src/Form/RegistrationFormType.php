@@ -20,16 +20,16 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-                'attr' => ['class' => 'form-entry']
+                'attr' => ['class' => 'form-control']
             ])
             ->add('lastname', TextType::class, [
-                'attr' => ['class' => 'form-entry']
+                'attr' => ['class' => 'form-control']
             ])
             ->add('firstname', TextType::class, [
-                'attr' => ['class' => 'form-entry']
+                'attr' => ['class' => 'form-control']
             ])
             ->add('pseudo', TextType::class, [
-                'attr' => ['class' => 'form-entry']
+                'attr' => ['class' => 'form-control']
             ])
             ->add('RGPDConnsent', CheckboxType::class, [
                 'mapped' => false,
@@ -46,7 +46,7 @@ class RegistrationFormType extends AbstractType
                 'mapped' => false,
                 'attr' => [
                     'autocomplete' => 'new-password',
-                    'class' => 'form-entry'
+                    'class' => 'form-control'
                 ],
                 'constraints' => [
                     new NotBlank([
