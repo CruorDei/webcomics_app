@@ -21,7 +21,12 @@
 						<a href="{{path('app_login')}}">login</a>
 					</li>
 				{% endif %}
+				{% if is_granted('ROLE_PRODUCT_ADMIN') %}
+					<li><a href="{{path('app_admin_index')}}">Admin</a>
+					</li>
+				{% endif %}
 			</ul>
+
 		</div>
 		<div id="toggle-element" style="display: none;">
 

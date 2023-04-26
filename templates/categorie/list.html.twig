@@ -10,7 +10,9 @@
             </div>
             <div class="">
                 {% for product in categorie.products %}
+                <div>
                     <a href="{{ path('app_productdetails', {slug: product.slug}) }}">{{product.name}}</a>
+                </div>
                 {% endfor %}
             </div>
         </section>

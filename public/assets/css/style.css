@@ -9,16 +9,68 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: grey;
+  background-color: #222;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
+  color: #ddd;
 }
 
 p {
   font-size: 16px;
   line-height: 1.5;
+  color: #eee;
+}
+
+button, input.submit{
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 10px;
+  background-color: #111;
+  color: #eee;
+  border: solid 2px #111;
+  box-sizing: border-box;
+}
+
+button:hover, input:hover{
+  background-color: #111;
+  color: #eee;
+  border: solid 2px #333;
+}
+
+button:hover{
+  background-color: #111;
+  border: solid 2px #999;
+}
+
+label{
+  color: #ddd;
+}
+
+a {
+  color: brown;
+  text-decoration: none;
+}
+
+a.link{
+  background-color: #333;
+  padding: 5px;
+  border-radius: 5px;
+  color: #ddd;
+}
+
+a.link:hover{
+  background-color: #444;
+}
+
+a.link:active{
+  background-color: #555;
+}
+
+.space{
+  margin: 20px;
 }
 
 nav {
@@ -28,10 +80,10 @@ nav {
   padding: 10px;
   background-image: linear-gradient(
       to bottom,
-      grey,
+      #222,
       rgba(255, 255, 255, 0) 20px
     ),
-    linear-gradient(to bottom, grey, grey 20px, transparent 20px, transparent);
+    linear-gradient(to bottom, #222, #222 20px, transparent 20px, transparent);
 }
 
 .nav-pos {
@@ -86,10 +138,6 @@ nav a:hover {
   color: white;
 }
 
-a {
-  color: brown;
-  text-decoration: none;
-}
 
 /*main*/
 
@@ -101,6 +149,51 @@ main {
   display: flex;
   justify-content: center;
 }
+
+.card-WC{
+  display: flex;
+  flex-direction: row;
+  margin: 15px;
+  border: solid #111 2px;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #111;
+}
+
+.card-WC a{
+  color: #eee;
+}
+
+.card-WC *{
+margin: 0;
+}
+.card-WC div.txt{
+ margin-left: 10px;
+}
+
+.container-grid-4{
+  display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-template-rows: auto;
+grid-gap: 15px;
+}
+
+/*x*/
+
+.card-x{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: #ddd solid 1px;
+}
+
+.link-x{
+  display: inline-block;
+  min-width: 150px;
+  text-align: center;
+}
+
 @media (min-width: 1200px) {
   /* Mettez vos styles ici */
   body {

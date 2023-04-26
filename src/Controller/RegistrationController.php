@@ -80,9 +80,13 @@ class RegistrationController extends AbstractController
 
 
     #[Route('/verif/{token}', name: 'verify_user')]
-    public function verifyUser($token, JWTservice $jwt, UserRepository $userRepository, EntityManagerInterface $em): Response
+    public function verifyUser($token,
+     JWTservice $jwt,
+      UserRepository $userRepository,
+       EntityManagerInterface $em): Response
     {
-        if($jwt->isValid($token) && !$jwt->isExpired($token) && $jwt->check($token, $this->getParameter('app.jwtsecret'))){
+        if($jwt->isValid($token) && !$jwt->isExpired($token) 
+        && $jwt->check($token, $this->getParameter('app.jwtsecret'))){
             $payload = $jwt->getPayload($token);
 
             //recupe user

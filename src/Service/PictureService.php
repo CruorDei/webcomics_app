@@ -30,11 +30,11 @@ class PictureService {
         $imageWidth = $picture_info[0];
         $imageHeight = $picture_info[1];
         
-        switch ($imageWidth <=> $imageHeight){
-            case -1: $squareSize = $imageWidth; $src_x = 0; $src_y = ($imageHeight - $squareSize) / 2; break;
-            case 0: $squareSize = $imageWidth; $src_x = 0; $src_y = ($imageHeight - $squareSize) / 2; break;
-            case 1: $squareSize = $imageHeight; $src_y = 0; $src_x = ($imageWidth - $squareSize) / 2; break;
-        }
+        // switch ($imageWidth <=> $imageHeight){
+        //     case -1: $squareSize = $imageWidth; $src_x = 0; $src_y = ($imageHeight - $squareSize) / 2; break;
+        //     case 0: $squareSize = $imageWidth; $src_x = 0; $src_y = ($imageHeight - $squareSize) / 2; break;
+        //     case 1: $squareSize = $imageHeight; $src_y = 0; $src_x = ($imageWidth - $squareSize) / 2; break;
+        // }
         $fichier =   $name . '-' . $imageWidth . 'x' . $imageHeight . '-' . md5(uniqid(rand(1, 10000)), false) . '.webp';
         // $resized_pic = imagecreatetruecolor($width, $height);
         // imagecopyresampled($resized_pic, $picture_source, 0, 0, $src_x, $src_y, $width, $height, $squareSize, $squareSize);

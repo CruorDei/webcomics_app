@@ -13,3 +13,26 @@ button.addEventListener("click", function() {
     element.classList.add("active");
   }
 });
+
+//pagination accueil
+
+let currentPage = 1;
+
+document.getElementById('show-more').addEventListener('click', function () {
+currentPage++;
+if (currentPage > numPages) {
+document.getElementById('show-more').style.display = 'none';
+return;
+}
+let nextPage = document.getElementById('page' + currentPage);
+nextPage.style.display = 'grid';
+});
+
+//cat
+
+// const cat = document.querySelector(".cat");
+// const catChildren = document.querySelectorAll(".cat-child");
+
+// catChildren.forEach((catChild) => {
+//   cat.appendChild(catChild);
+// });

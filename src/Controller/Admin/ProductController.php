@@ -26,13 +26,15 @@ class ProductController extends AbstractController
         $products = $productRepository->findAll();
 
         return $this->render('admin/product/index.html.twig', [
-            'controller_name' => 'UserController',
+            'controller_name' => 'ProductController',
             'products' => $products
         ]);
     }
 
     #[Route('/add', name: 'add')]
-    public function add(Request $request, EntityManagerInterface $em, SluggerInterface $slugger, PictureService $pictureService): Response
+    public function add(Request $request, 
+        EntityManagerInterface $em, SluggerInterface $slugger, 
+        PictureService $pictureService): Response
     {
         $this->denyAccessUnlessGranted('ROLE_PRODUCT_ADMIN');
     
@@ -75,7 +77,7 @@ class ProductController extends AbstractController
         }
     
         return $this->render('admin/product/add.html.twig', [
-            'controller_name' => 'UserController',
+            'controller_name' => 'ProductController',
             'productForm' => $productForm->createView()
         ]);
     }
@@ -119,7 +121,7 @@ class ProductController extends AbstractController
         }
 
         return $this->render('admin/product/edit.html.twig', [
-            'controller_name' => 'UserController',
+            'controller_name' => 'ProductController',
             'productForm' => $productForm->createView(),
             'product' => $product
         ]);

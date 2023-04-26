@@ -18,7 +18,8 @@ class UnderProductFormType extends AbstractType
             ->add('num', TypeTextType::class, [
                 'attr' => [
                     'placeholder' => 'Chap - "entrer le numero ou le titre"',
-                    'value' => 'Chap - '
+                    'value' => 'Chap - ',
+                    'class' => 'form-control'
                 ],
                     
             ])
@@ -26,7 +27,8 @@ class UnderProductFormType extends AbstractType
                 'label' => false,
                 'multiple' => true,
                 'mapped' => false, //eviter d'avoir une erreur apres verif dans l'entité
-                'required' => false
+                'required' => false,
+                'attr' => ['class' => 'form-control']                
             ])
         ;
     }

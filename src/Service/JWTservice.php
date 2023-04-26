@@ -5,7 +5,7 @@ use DateTimeImmutable;
 //json web token
 class JWTservice {
 
-    //JWT.io qui explique comment fonctionne les tokens / 10800 secondes c'est 3h
+    //JWT.io qui explique comment fonctionne les tokens // 10800 secondes c'est 3h
     public function generate(array $header, array $payload, string $secret, int $validity = 10800): string
     {
         if($validity > 0 )
@@ -29,7 +29,7 @@ class JWTservice {
         $base64Header = str_replace(['+', '/', '='], ['-', '_', ''], $base64Header);
         $base64Payload = str_replace(['+', '/', '='], ['-', '_', ''], $base64Payload);
 
-        //signrature create
+        //signature create
         $secret = base64_encode($secret);
         $signature = hash_hmac('sha256', $base64Header . '.' . $base64Payload, $secret, true); //sha256 utilisé par les jwt
         $base64Signature = base64_encode($signature);
