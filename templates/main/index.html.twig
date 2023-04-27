@@ -49,7 +49,7 @@
 							<div class="txt">
 								<a href="{{path('app_productdetails', {slug: product.slug})}}">{{product.name}}</a>
 								<div class="txt">
-									{% for underProduct in product.underProducts|slice(0, 2) %}
+									{% for underProduct in product.underProducts|reverse|slice(0, 2) %}
 										<a href="{{ path('under_product_details', 
 										{slug_parent: product.slug , id: underProduct.id, slug: underProduct.slug}) }}">
 											<p>{{ underProduct.num }}</p>

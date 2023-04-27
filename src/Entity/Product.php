@@ -34,7 +34,7 @@ class Product
     #[ORM\OneToMany(mappedBy: 'products', targetEntity: Image::class, orphanRemoval: true, cascade: ['persist'])]
     private Collection $images;
 
-    #[ORM\OneToMany(mappedBy: 'parentProduct', targetEntity: UnderProduct::class)]
+    #[ORM\OneToMany(mappedBy: 'parentProduct', targetEntity: UnderProduct::class, orphanRemoval: true, cascade: ['persist'])]
     private Collection $underProducts;
 
     #[ORM\Column(type: "datetime")]

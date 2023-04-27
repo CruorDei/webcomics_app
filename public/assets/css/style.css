@@ -202,6 +202,12 @@ grid-gap: 15px;
   section {
     width: 1140px;
   }
+  .container-grid-4{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 15px;
+  }
 }
 
 @media (min-width: 780px) and (max-width: 1200px) {
@@ -211,6 +217,12 @@ grid-gap: 15px;
   }
   section {
     width: 720px;
+  }
+  .container-grid-4{
+    display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 10px;
   }
 }
 
@@ -222,5 +234,11 @@ grid-gap: 15px;
   section {
     min-width: 360;
     width: auto;
+  }
+  .container-grid-4{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 10px;
   }
 }
