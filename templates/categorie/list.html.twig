@@ -6,15 +6,43 @@
 
         <section class="">
             <div class="">
-                <h1>Details of {{categorie.name}}</h1>
+                <h1>Tout les {{categorie.parent.name}}s {{categorie.name}}</h1>
             </div>
-            <div class="">
-                {% for product in categorie.products %}
-                <div>
-                    <a href="{{ path('app_productdetails', {slug: product.slug}) }}">{{product.name}}</a>
-                </div>
-                {% endfor %}
-            </div>
+            {% set products_per_page = 4 %}
+		{% set num_pages = (products|length / products_per_page)|round(0, 'ceil') %}
+		<script>
+			let numPages = {{ num_pages }};
+		</script>
+            <div id="product-list">
+			{% for page in 1..num_pages %}
+				<div class="page container-grid-4" id="page{{ page }}" {% if page != 1 %} style="display:none" {% endif %}>
+					{% for product in products|slice((page-1)*products_per_page, products_per_page) %}
+						<div class="card-WC">
+							{% for image in product.images %}
+								{% if image.name %}
+									<div>
+										<img src="{{asset('assets/uploads/products/') ~ image.name}}" 
+										alt="image de {{ image.name }}" width='70' height='100'>
+									</div>
+								{% endif %}
+							{% endfor %}
+							<div class="txt">
+								<a href="{{path('app_productdetails', {slug: product.slug})}}">{{product.name}}</a>
+								<div class="txt">
+									{% for underProduct in product.underProducts|reverse|slice(0, 2) %}
+										<a href="{{ path('under_product_details', 
+										{slug_parent: product.slug , id: underProduct.id, slug: underProduct.slug}) }}">
+											<p>{{ underProduct.num }}</p>
+										</a>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			{% endfor %}
+		</div>
+            <button id="show-more">Afficher plus</button>
         </section>
 
 {% endblock %}
